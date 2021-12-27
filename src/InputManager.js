@@ -1,8 +1,8 @@
 class InputManager {
-    observer = [];
+    observers = [];
 
     subscribe(fn){
-        this.observer.push(fn)
+        this.observers.push(fn)
     }
 
     unsubscribe(fn){
@@ -10,7 +10,7 @@ class InputManager {
     }
 
     broadcast(action, data) {
-        this.observer.forEach(subscriber => subscriber(action, data));
+        this.observers.forEach(subscriber => subscriber(action, data));
     }
 
     handleKeys = e => {
@@ -37,6 +37,8 @@ class InputManager {
         document.addEventListener('keydown', this.handleKeys);
     }
     unbindKeys(){
-        document.removeEventListener('keydown', this.handleKeys)
+        document.removeEventListener('keydown', this.handleKeys);
     }
 }
+
+export default InputManager;
