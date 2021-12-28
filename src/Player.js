@@ -6,6 +6,7 @@ class Player extends Entity{
     //     this.y = y;
     //     this.size = size;
     // }
+    inventory = [];
 
     attributes = {
         name: 'Player',
@@ -16,6 +17,10 @@ class Player extends Entity{
     move(dx, dy){
         this.x += dx;
         this.y += dy;
+    }
+
+    add(item){
+        this.inventory.push(item);
     }
 
     // draw(context){
