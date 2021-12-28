@@ -41,9 +41,22 @@ class World {
             this.worldmap[x][y] === 1)
     }
 
+    getEntityAtLocation(x, y){
+        return this.entities.find(entity => entity.x === x && entity.y === y);
+    }
+
     movePlayer(dx, dy){
         let tempPlayer = this.player.copyPlayer();
         tempPlayer.move(dx, dy);
+        let entity = this.getEntityAtLocation(tempPlayer.x, tempPlayer.y);
+        if(entity) {
+            console.log(entity);
+            entity.action('bump', this);
+            return;
+        }
+
+
+
         if(this.isWall(tempPlayer.x, tempPlayer.y)){
             console.log(`Way blocked at ${tempPlayer.x}:${tempPlayer.y}!`);
         } else {
