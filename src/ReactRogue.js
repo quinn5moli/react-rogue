@@ -25,6 +25,7 @@ const ReactRogue = ({width, height, tilesize}) => {
         newWorld.moveToSpace(world.player);
         let spawner = new Spawner(newWorld);
         spawner.spawnLoot(10);
+        spawner.spawnMonsters(6);
         setWorld(newWorld); 
         // eslint-disable-next-line 
     }, []);
