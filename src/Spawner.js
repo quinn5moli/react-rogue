@@ -44,7 +44,7 @@ class Spawner {
                 getRandomInt(this.world.width), 
                 getRandomInt(this.world.height),
                 this.world.tilesize, 
-                monsterTable[getRandomInt(lootTable.length)]
+                monsterTable[getRandomInt(monsterTable.length)]
              );
         });
     }

@@ -3,10 +3,11 @@ import Player from './Player';
 
 class World {
     constructor(width, height, tilesize){
-        this.width=width;
-        this.height=height;
-        this.tilesize=tilesize;
+        this.width = width;
+        this.height = height;
+        this.tilesize = tilesize;
         this.entities = [new Player(0, 0, 16)];
+        this.history = ['You enter the dungeon', '---'];
 
         this.worldmap = new Array(this.width);
         for (let x = 0; x < this.width; x++){
@@ -101,6 +102,10 @@ class World {
             this.tilesize,
             this.tilesize
         );
+    }
+
+    addToHistory(history) {
+        this.history.push(history);
     }
 }
 
