@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
 import InputManager from "./InputManager";
-import Player from "./Player";
-import World from "./World";
+import Player from "./components/Player";
+import World from "./components/World";
 import Spawner from "./Spawner";
 
 const ReactRogue = ({width, height, tilesize}) => {
