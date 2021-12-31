@@ -1,8 +1,8 @@
 import React, {useRef, useEffect, useState} from "react";
-import InputManager from "./InputManager";
+import InputManager from "./components/InputManager";
 import Player from "./components/Player";
 import World from "./components/World";
-import Spawner from "./Spawner";
+import Spawner from "./components/Spawner";
 
 const ReactRogue = ({width, height, tilesize}) => {
     const canvasRef = useRef();
